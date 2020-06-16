@@ -33,6 +33,18 @@ fun onMessageEvent(event: MessageEvent) {
     Toast.makeText(this, event.description, Toast.LENGTH_SHORT).show()
 }
 
+4) Registering events
+
+override fun onStart() {
+    EventBus.getDefault().register(this)
+    super.onStart()
+}
+
+override fun onStop() {
+    EventBus.getDefault().unregister(this)
+    super.onStop()
+}
+
 ThreadMode:
 -----------
 
